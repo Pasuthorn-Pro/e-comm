@@ -9,8 +9,8 @@
     height: 70px;
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: self-start;
     gap: 8px 30px;
   }
   a {
@@ -30,7 +30,7 @@
     width: 0%;
     height: 2px;
     background-color: yellowgreen;
-    transition: 0.5s linear;
+    transition: 0.3s linear;
   }
   a:hover {
     color: #fff;
@@ -38,4 +38,3 @@
   a:hover:after {
     width: 100%;
   }
-  
