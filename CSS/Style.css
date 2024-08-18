@@ -1,57 +1,41 @@
-body{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+  }
+  nav {
+    background-color: #333;
+    height: 70px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background-color: black;
-}
-
-nav{
-    position: relative;
-    width: 475px;
-    height: 50px;
-    background: #222;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-nav a{
-    position: relative;
-    display: inline-block;
-    font-size: 1em;
-    font-weight: 500;
-    color: white;
+    gap: 8px 30px;
+  }
+  a {
+    color: #a0a0a0;
     text-decoration: none;
-    padding: 0 23px;
-    z-index: 1;
-}
-
-nav span{
+    padding: 0 20px;
+    letter-spacing: 0.5px;
     position: relative;
-    top: 0;
+    transition: 0.2s;
+  }
+  
+  a::after {
+    content: "";
+    position: absolute;
     left: 0;
-    width: 95px;
-    height: 100%;
-    background: linear-gradient(45deg, #194b4f,#33fffc);
-    border-radius: 10px;
-    transition: 0.5s;
-}
-
-nav a:nth-child(1):hover~span{
-    left: 0px;
-}
-nav a:nth-child(2):hover~span{
-    left: 90px;
-}
-nav a:nth-child(3):hover~span{
-    left: 180px;
-}
-nav a:nth-child(4):hover~span{
-    left: 275px;
-}
-nav a:nth-child(5):hover~span{
-    left: 380px;
-}
-
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background-color: yellowgreen;
+    transition: 0.5s linear;
+  }
+  a:hover {
+    color: #fff;
+  }
+  a:hover:after {
+    width: 100%;
+  }
+  
