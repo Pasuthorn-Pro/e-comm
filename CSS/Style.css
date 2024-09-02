@@ -1,40 +1,70 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto Condensed", sans-serif;
-  }
-  nav {
-    background-color: #333;
-    height: 70px;
-    width: 100%;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    gap: 8px 50px;
-  }
-  a {
-    color: #a0a0a0;
-    text-decoration: none;
-    padding: 0 20px;
-    letter-spacing: 0.5px;
-    position: relative;
-    transition: 0.2s;
-  }
-  
-  a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0%;
-    height: 2px;
-    background-color: yellowgreen;
-    transition: 0.3s linear;
-  }
-  a:hover {
-    color: #fff;
-  }
-  a:hover:after {
-    width: 100%;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.nav {
+  background-color: #333;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Adjust to space between items */
+  align-items: center;
+  padding: 0 30px; /* Add padding for better spacing */
+}
+
+nav {
+  display: flex;
+  gap: 8px 50px;
+}
+
+a {
+  color: #a0a0a0;
+  text-decoration: none;
+  padding: 0 30px;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: 0.2s;
+  font-size: 20px;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background-color: yellowgreen;
+  transition: 0.3s linear;
+}
+
+a:hover {
+  color: #fff;
+}
+
+a:hover:after {
+  width: 100%;
+}
+
+.cart-icon {
+  margin-right: 30px; /* Adjust margin to your liking */
+}
+
+.cart-icon a {
+  display: inline-block;
+  padding: 10px; /* Increase padding to create the square effect */
+  transition: background-color 0.3s ease;
+}
+
+.cart-icon a:hover {
+  background-color: #444; /* Background color on hover */
+  border-radius: 5px; /* Optional: Add border-radius for smoother corners */
+}
+
+.cart-icon img {
+  width: 24px;
+  height: 24px;
+}
