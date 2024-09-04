@@ -141,8 +141,8 @@ button:hover {
 /* Product Items */
 .item {
   display: flex;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   border: 3px solid yellowgreen; /* Yellow border */
   border-radius: 10px;
   margin: 50px;
