@@ -8,7 +8,7 @@
 
 /* Navigation Bar */
 .nav {
-  background-color: #cd69ff; /* Bright yellow for a playful feel */
+  background-color: #333;
   height: 70px;
   width: 100%;
   display: flex;
@@ -24,7 +24,7 @@ nav {
 }
 
 a {
-  color: #000000; /* Fun pink color */
+  color: #a0a0a0;
   text-decoration: none;
   padding: 0 30px;
   letter-spacing: 0.5px;
@@ -33,19 +33,19 @@ a {
   font-size: 20px;
 }
 
-a::after { /* Underline on hover */
+a::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: -5px;
   width: 0%;
   height: 2px;
-  background-color: #66ccff; /* Light blue underline */
+  background-color: yellowgreen;
   transition: 0.1s linear;
 }
 
 a:hover {
-  color: #fbff00; /* Yellow text on hover */
+  color: #ffffff;
 }
 
 a:hover::after {
@@ -54,7 +54,7 @@ a:hover::after {
 
 .cart-icon {
   position: absolute;
-  right: 30px; /* Position the cart icon to the right edge */
+  right: 30px;
 }
 
 .cart-icon a {
@@ -64,13 +64,69 @@ a:hover::after {
 }
 
 .cart-icon a:hover {
-  background-color: #ff6699; /* Match hover color with link color */
+  background-color: rgba(160, 160, 160, 0.5);
   border-radius: 5px;
 }
 
 .cart-icon img {
   width: 24px;
   height: 24px;
+}
+
+.ad-container {
+  width: 1200px; /* กำหนดความกว้างของกรอบ */
+  height: 700px; /* กำหนดความสูงของกรอบ */
+  overflow: hidden;
+  position: relative;
+  margin: 20px auto; /* จัดกลางกรอบ */
+  border: 2px solid #ddd; /* เพิ่มกรอบรอบๆ */
+  background-color: #f0f0f0; /* พื้นหลังกรอบ */
+  border-radius: 10px;
+}
+
+.ad-wrapper {
+  display: flex;
+  position: absolute; /* ใช้เพื่อจัดตำแหน่งที่ถูกต้อง */
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.ad {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; /* จัดกลางแนวนอน */
+  align-items: center; /* จัดกลางแนวตั้ง */
+}
+
+.ad img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* ปรับขนาดให้พอดีกับกรอบ */
+}
+
+/* Center the buttons */
+.button-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  gap: 10px; /* Space between buttons */
+  margin-top: 20px; /* Space above buttons */
+}
+
+/* Button styles */
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
 
 /* Product Container */
@@ -87,7 +143,7 @@ a:hover::after {
   display: flex;
   width: 200px;
   height: 200px;
-  border: 2px solid #ffcc00; /* Yellow border */
+  border: 3px solid yellowgreen; /* Yellow border */
   border-radius: 10px;
   margin: 50px;
   align-items: center;
@@ -101,12 +157,12 @@ a:hover::after {
 }
 
 /* Specific Styles for Each Product */
-.item1 { background-color: #ff9999; } /* Light pink */
-.item2 { background-color: #ffcc99; } /* Peach */
-.item3 { background-color: #ffff99; } /* Light yellow */
-.item4 { background-color: #99ff99; } /* Light green */
-.item5 { background-color: #99ccff; } /* Light blue */
-.item6 { background-color: #ff99cc; } /* Light pink */
+.item1 { background-color: #888888; } /* Light pink */
+.item2 { background-color: #888888; } /* Peach */
+.item3 { background-color: #888888; } /* Light yellow */
+.item4 { background-color: #888888; } /* Light green */
+.item5 { background-color: #888888; } /* Light blue */
+.item6 { background-color: #888888; } /* Light pink */
 
 /* Responsive Design */
 @media (max-width: 700px) {
