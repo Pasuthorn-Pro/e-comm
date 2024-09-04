@@ -5,6 +5,23 @@
   font-family: "Roboto Condensed", sans-serif;
 }
 
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.item{
+  display: flex;
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
 .nav {
   background-color: #333;
   height: 70px;
