@@ -74,95 +74,110 @@ a:hover::after {
 }
 
 .ad-container {
-  width: 1200px; /* กำหนดความกว้างของกรอบ */
-  height: 700px; /* กำหนดความสูงของกรอบ */
-  overflow: hidden;
   position: relative;
-  margin: 20px auto; /* จัดกลางกรอบ */
-  border: 2px solid #ddd; /* เพิ่มกรอบรอบๆ */
-  background-color: #f0f0f0; /* พื้นหลังกรอบ */
-  border-radius: 10px;
-}
-
-.ad-wrapper {
-  display: flex;
-  position: absolute; /* ใช้เพื่อจัดตำแหน่งที่ถูกต้อง */
   width: 100%;
-  height: 100%;
-  transition: transform 0.3s ease-in-out;
+  height: 550px;
+  overflow: hidden;
 }
 
 .ad {
-  min-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center; /* จัดกลางแนวนอน */
-  align-items: center; /* จัดกลางแนวตั้ง */
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
 }
 
 .ad img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain; /* ปรับขนาดให้พอดีกับกรอบ */
+  width: 800px;
+  height: 550px;
 }
 
-/* Center the buttons */
-.button-container {
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  gap: 10px; /* Space between buttons */
-  margin-top: 20px; /* Space above buttons */
+.ad.active {
+  left: 0;
+  opacity: 1;
 }
 
-/* Button styles */
-button {
-  background-color: #007bff;
-  color: #fff;
+.ad.slide-out-left {
+  left: -100%;
+}
+
+.ad.slide-in-right {
+  left: 100%;
+}
+
+.ad.slide-in-left {
+  left: 0;
+}
+
+/* Style for navigation buttons */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
   border: none;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 10px;
   cursor: pointer;
-  border-radius: 5px;
+  font-size: 24px;
+  border-radius: 50%;
+  z-index: 10;
 }
 
-button:hover {
-  background-color: #0056b3;
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.nav-btn i {
+  pointer-events: none;
+}
+
+.nav-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
 }
 
 /* Product Container */
 .container {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* ปรับขนาดตามหน้าจอ */
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
   padding: 20px;
 }
 
 /* Product Items */
 .item {
   display: flex;
-  width: 300px;
+  width: 100%; /* ปรับให้ใช้เต็มความกว้าง */
   height: 300px;
-  border: 3px solid yellowgreen; /* Yellow border */
+  border: 3px solid yellowgreen;
   border-radius: 10px;
-  margin: 50px;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
+  background-color: rgba(160, 160, 160, 0.5);
   transition: transform 0.2s;
 }
 
 .item:hover {
-  transform: scale(1.05); /* Slightly enlarge item on hover */
+  transform: scale(1.1); /* ขยายเมื่อ hover */
 }
 
-/* Specific Styles for Each Product */
-.item1 { background-color: #888888; } /* Light pink */
-.item2 { background-color: #888888; } /* Peach */
-.item3 { background-color: #888888; } /* Light yellow */
-.item4 { background-color: #888888; } /* Light green */
-.item5 { background-color: #888888; } /* Light blue */
-.item6 { background-color: #888888; } /* Light pink */
+
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
 
 /* Responsive Design */
 @media (max-width: 700px) {
@@ -176,15 +191,11 @@ button:hover {
     text-align: left;
   }
 
-  .container {
-    grid-template-columns: 1fr;
-    gap: 5px;
-    padding: 10px;
+  .ad-container {
+    height: 500px; /* ลดขนาดสูงสำหรับหน้าจอเล็ก */
   }
 
-  .item {
-    margin: 20px 0;
-    width: 100%;
-    height: auto;
+  .button-container {
+    flex-direction: column;
   }
 }

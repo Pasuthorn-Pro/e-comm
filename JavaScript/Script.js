@@ -1,28 +1,38 @@
 const ads = document.querySelectorAll('.ad');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-let currentIndex = 0;
+let currentAdIndex = 0;
 
-// แสดงโฆษณาที่ระบุโดย index
+// Initialize the slideshow by displaying the first ad
+function initSlideshow() {
+    showAd(currentAdIndex);
+}
+
+// Display the ad corresponding to the given index
 function showAd(index) {
     ads.forEach((ad, i) => {
-        ad.style.display = i === index ? 'flex' : 'none';
+        ad.classList.toggle('active', i === index);
     });
 }
 
-// แสดงโฆษณาเริ่มต้น
-showAd(currentIndex);
+// Move to the next ad in the slideshow
+function nextAd() {
+    currentAdIndex = (currentAdIndex + 1) % ads.length;
+    showAd(currentAdIndex);
+}
 
-nextBtn.addEventListener('click', () => {
-    if (currentIndex < ads.length - 1) {
-        currentIndex++;
-        showAd(currentIndex);
-    }
-});
+// Move to the previous ad in the slideshow
+function prevAd() {
+    currentAdIndex = (currentAdIndex - 1 + ads.length) % ads.length;
+    showAd(currentAdIndex);
+}
 
-prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        showAd(currentIndex);
-    }
+// Attach event listeners to buttons
+function setupEventListeners() {
+    document.getElementById('nextBtn').addEventListener('click', nextAd);
+    document.getElementById('prevBtn').addEventListener('click', prevAd);
+}
+
+// Initialize the slideshow when the page is ready
+document.addEventListener('DOMContentLoaded', () => {
+    initSlideshow();
+    setupEventListeners();
 });
